@@ -1,0 +1,230 @@
+wandb_version: 1
+
+_wandb:
+  desc: null
+  value:
+    python_version: 3.10.17
+    cli_version: 0.17.7
+    framework: torch
+    is_jupyter_run: false
+    is_kaggle_kernel: false
+    start_time: 1746129021
+    t:
+      1:
+      - 1
+      - 55
+      2:
+      - 1
+      - 55
+      3:
+      - 13
+      - 23
+      4: 3.10.17
+      5: 0.17.7
+      8:
+      - 5
+      13: linux-x86_64
+config_filepath:
+  desc: null
+  value: null
+mode:
+  desc: null
+  value: train
+experiments_dir:
+  desc: null
+  value: ./runs
+experiment_name:
+  desc: null
+  value: 2025-05-01_19-50-16
+use_wandb:
+  desc: null
+  value: true
+wandb_project:
+  desc: null
+  value: aa276
+wandb_entity:
+  desc: null
+  value: YOUR_WANDB_ENTITY
+wandb_group:
+  desc: null
+  value: quadrotor
+wandb_name:
+  desc: null
+  value: 2025-05-01_19-50-16
+seed:
+  desc: null
+  value: 0
+experiment_class:
+  desc: null
+  value: DeepReach
+numpoints:
+  desc: null
+  value: 65000
+pretrain:
+  desc: null
+  value: true
+pretrain_iters:
+  desc: null
+  value: 1000
+tMax:
+  desc: null
+  value: 1.0
+counter_start:
+  desc: null
+  value: 0
+counter_end:
+  desc: null
+  value: 100000
+deepReach_model:
+  desc: null
+  value: exact
+pretrained_model:
+  desc: null
+  value: none
+finetune:
+  desc: null
+  value: false
+num_hl:
+  desc: null
+  value: 3
+num_nl:
+  desc: null
+  value: 512
+epochs_til_ckpt:
+  desc: null
+  value: 1000
+lr:
+  desc: null
+  value: 2.0e-05
+num_epochs:
+  desc: null
+  value: 104000
+not_use_MPC:
+  desc: null
+  value: false
+not_refine_dataset:
+  desc: null
+  value: false
+MPC_finetune_lambda:
+  desc: null
+  value: 100.0
+num_MPC_data_samples:
+  desc: null
+  value: 5000
+no_time_curr:
+  desc: null
+  value: false
+MPC_importance_init:
+  desc: null
+  value: 1.0
+MPC_importance_final:
+  desc: null
+  value: 1.0
+time_till_refinement:
+  desc: null
+  value: 0.2
+MPC_batch_size:
+  desc: null
+  value: 5000
+num_MPC_batches:
+  desc: null
+  value: 20
+num_MPC_perturbation_samples:
+  desc: null
+  value: 100
+num_iterative_refinement:
+  desc: null
+  value: 20
+MPC_dt:
+  desc: null
+  value: 0.02
+MPC_receding_horizon:
+  desc: null
+  value: -1
+MPC_style:
+  desc: null
+  value: direct
+MPC_data_path:
+  desc: null
+  value: none
+tMin:
+  desc: null
+  value: 0.0
+num_src_samples:
+  desc: null
+  value: 3000
+num_target_samples:
+  desc: null
+  value: 0
+model:
+  desc: null
+  value: sine
+model_mode:
+  desc: null
+  value: mlp
+resume_checkpoint:
+  desc: null
+  value: -1
+steps_til_summary:
+  desc: null
+  value: 100
+batch_size:
+  desc: null
+  value: 1
+clip_grad:
+  desc: null
+  value: 0.0
+use_lbfgs:
+  desc: null
+  value: false
+adj_rel_grads:
+  desc: null
+  value: true
+dirichlet_loss_divisor:
+  desc: null
+  value: 1.0
+MPC_mode:
+  desc: null
+  value: MPC
+MPC_sample_mode:
+  desc: null
+  value: gaussian
+MPC_lambda_:
+  desc: null
+  value: 0.1
+MPC_loss_type:
+  desc: null
+  value: l1
+aug_with_MPC_data:
+  desc: null
+  value: 0
+MPC_decay_scheme:
+  desc: null
+  value: exponential
+val_x_resolution:
+  desc: null
+  value: 200
+val_y_resolution:
+  desc: null
+  value: 200
+val_z_resolution:
+  desc: null
+  value: 5
+val_time_resolution:
+  desc: null
+  value: 6
+minWith:
+  desc: null
+  value: target
+dynamics_class:
+  desc: null
+  value: Quadrotor
+collisionR:
+  desc: null
+  value: 0.5
+collective_thrust_max:
+  desc: null
+  value: 20.0
+set_mode:
+  desc: null
+  value: avoid

@@ -1,0 +1,125 @@
+{
+    "os": "Linux-5.10.0-34-cloud-amd64-x86_64-with-glibc2.31",
+    "python": "3.10.17",
+    "heartbeatAt": "2025-05-01T19:50:23.226566",
+    "startedAt": "2025-05-01T19:50:21.521902",
+    "docker": null,
+    "cuda": null,
+    "args": [
+        "--mode",
+        "train",
+        "--experiment_name",
+        "2025-05-01_19-50-16",
+        "--dynamics_class",
+        "Quadrotor",
+        "--tMax",
+        "1",
+        "--pretrain",
+        "--pretrain_iters",
+        "1000",
+        "--num_epochs",
+        "104000",
+        "--counter_end",
+        "100000",
+        "--num_nl",
+        "512",
+        "--collisionR",
+        "0.5",
+        "--collective_thrust_max",
+        "20",
+        "--set_mode",
+        "avoid",
+        "--lr",
+        "2e-5",
+        "--num_MPC_batches",
+        "20",
+        "--MPC_batch_size",
+        "5000",
+        "--use_wandb",
+        "--wandb_project",
+        "aa276",
+        "--wandb_name",
+        "2025-05-01_19-50-16",
+        "--wandb_group",
+        "quadrotor"
+    ],
+    "state": "running",
+    "program": "/home/purushmani05/AA276-PrinciplesOfSafetyCriticalAutonomy/hw2/../libraries/DeepReach_MPC/run_experiment.py",
+    "codePathLocal": null,
+    "codePath": "libraries/DeepReach_MPC/run_experiment.py",
+    "git": {
+        "remote": "https://github.com/Purushotham-Mani/AA276-PrinciplesOfSafetyCriticalAutonomy.git",
+        "commit": "adbc361d612908460fdc9dd02932d6d0bb953dea"
+    },
+    "email": null,
+    "root": "/home/purushmani05/AA276-PrinciplesOfSafetyCriticalAutonomy",
+    "host": "hw1",
+    "username": "purushmani05",
+    "executable": "/home/purushmani05/AA276/bin/python",
+    "cpu_count": 4,
+    "cpu_count_logical": 8,
+    "cpu_freq": {
+        "current": 2199.998,
+        "min": 0.0,
+        "max": 0.0
+    },
+    "cpu_freq_per_core": [
+        {
+            "current": 2199.998,
+            "min": 0.0,
+            "max": 0.0
+        },
+        {
+            "current": 2199.998,
+            "min": 0.0,
+            "max": 0.0
+        },
+        {
+            "current": 2199.998,
+            "min": 0.0,
+            "max": 0.0
+        },
+        {
+            "current": 2199.998,
+            "min": 0.0,
+            "max": 0.0
+        },
+        {
+            "current": 2199.998,
+            "min": 0.0,
+            "max": 0.0
+        },
+        {
+            "current": 2199.998,
+            "min": 0.0,
+            "max": 0.0
+        },
+        {
+            "current": 2199.998,
+            "min": 0.0,
+            "max": 0.0
+        },
+        {
+            "current": 2199.998,
+            "min": 0.0,
+            "max": 0.0
+        }
+    ],
+    "disk": {
+        "/": {
+            "total": 48.97825241088867,
+            "used": 36.391883850097656
+        }
+    },
+    "gpu": "Tesla T4",
+    "gpu_count": 1,
+    "gpu_devices": [
+        {
+            "name": "Tesla T4",
+            "memory_total": 16106127360
+        }
+    ],
+    "memory": {
+        "total": 29.389854431152344
+    }
+}
