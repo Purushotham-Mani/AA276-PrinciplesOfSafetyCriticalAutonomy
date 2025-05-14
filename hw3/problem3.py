@@ -67,7 +67,7 @@ def smooth_blending_safety_filter(x, u_nom, gamma, lmbda):
     u = cp.Variable(4)
     s = cp.Variable(1)
 
-    obj = cp.Minimize(cp.norm(u - u_nom_np) + lmbda * (s**2))
+    obj = cp.Minimize(cp.norm(u - u_nom_np)**2 + lmbda * (s**2))
 
     u_upper, u_lower = control_limits()
 
