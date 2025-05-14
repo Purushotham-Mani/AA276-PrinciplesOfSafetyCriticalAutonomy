@@ -67,9 +67,9 @@ def smooth_blending_safety_filter(x, u_nom, gamma, lmbda):
     u = cp.Variable(4)
     s = cp.Variable(1)
 
-    obj = cp.Minimize(cp.norm(u - u_nom_np) + lmbda * s)
+    obj = cp.Minimize(cp.norm(u - u_nom_np) + lmbda * (s**2))
 
-    u_lower, u_upper = control_limits()
+    u_upper, u_lower = control_limits()
 
     constraints = [
         s >= 0,
@@ -81,4 +81,8 @@ def smooth_blending_safety_filter(x, u_nom, gamma, lmbda):
     prob = cp.Problem(obj, constraints)
     prob.solve()
     u_sb = u
+    print(prob.status)
+    if prob.status != "optimal":
+        return u_nom
+
     return torch.tensor(u_sb.value, dtype=torch.float32) # NOTE: ensure you return a float32 tensor

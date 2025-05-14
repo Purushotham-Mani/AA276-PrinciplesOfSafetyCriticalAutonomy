@@ -93,7 +93,7 @@ class NeuralVF:
         returns:
             values: torch tensor with shape [batch_size]
         """
-        coords = torch.concatenate((torch.ones((len(x), 1), device=x.device), x), dim=1)
+        coords = torch.cat((torch.ones((len(x), 1), device=x.device), x), dim=1)
         model_input = self.dynamics.coord_to_input(coords)
         with torch.no_grad():
             model_results = self.model({'coords': model_input.cuda()})
@@ -107,7 +107,7 @@ class NeuralVF:
         returns:
             gradients: torch tensor with shape [batch_size, 13]
         """
-        coords = torch.concatenate((torch.ones((len(x), 1), device=x.device), x), dim=1)
+        coords = torch.cat((torch.ones((len(x), 1), device=x.device), x), dim=1)
         model_input = self.dynamics.coord_to_input(coords)
         model_results = self.model({'coords': model_input.cuda()})
         gradients = self.dynamics.io_to_dv(model_results['model_in'], model_results['model_out'].squeeze(dim=-1))[:, 1:]
