@@ -1,3 +1,4 @@
+
 import torch
 import cvxpy as cp
 from problem3_helper import control_limits, f, g
@@ -50,24 +51,25 @@ def smooth_blending_safety_filter(x, u_nom, gamma, lmbda):
     for obs in obstacles:
         px, py, orad = obs
         x_hat = x.clone()
-        x_hat[0] = x[0] - px  # shift px
-        x_hat[1] = x[1] - py  # shift py
+        x_hat[0] = (orad / 0.5)*(x[0] - px)  
+        x_hat[1] = (orad / 0.5)*(x[1] - py)
+        x_hat[7] = (orad / 0.5)*x_hat[7]
+        x_hat[8] = (orad / 0.5)*x_hat[8]
         x_hatbatched = x_hat.unsqueeze(0)
 
         v = vf.values(x_hatbatched)[0].item()
-        v_scaled = (orad / 0.5) * v
 
-        if v_scaled < min_value:
-            min_value = v_scaled
+        if v < min_value:
+            min_value = v
             grad = vf.gradients(x_hatbatched)[0]
-            grad_scaled = (orad / 0.5) * grad
+            grad_scaled = grad
             min_grad = grad_scaled.numpy()
 
     # Setup QP
     u = cp.Variable(4)
     s = cp.Variable(1)
 
-    obj = cp.Minimize(cp.norm(u - u_nom_np)**2 + lmbda * (s**2))
+    obj = cp.Minimize(cp.sum_squares(u - u_nom_np) + lmbda * (s**2))
 
     u_upper, u_lower = control_limits()
 
