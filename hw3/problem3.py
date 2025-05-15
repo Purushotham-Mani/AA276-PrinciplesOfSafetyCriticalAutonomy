@@ -51,10 +51,10 @@ def smooth_blending_safety_filter(x, u_nom, gamma, lmbda):
     for obs in obstacles:
         px, py, orad = obs
         x_hat = x.clone()
-        x_hat[0] = (orad / 0.5)*(x[0] - px)  
-        x_hat[1] = (orad / 0.5)*(x[1] - py)
-        x_hat[7] = (orad / 0.5)*x_hat[7]
-        x_hat[8] = (orad / 0.5)*x_hat[8]
+        x_hat[0] = (0.5/orad)*(x[0] - px)  
+        x_hat[1] = (0.5/orad)*(x[1] - py)
+        x_hat[7] = (0.5/orad)*x_hat[7]
+        x_hat[8] = (0.5/orad)*x_hat[8]
         x_hatbatched = x_hat.unsqueeze(0)
 
         v = vf.values(x_hatbatched)[0].item()
